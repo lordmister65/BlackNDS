@@ -1,0 +1,181 @@
+Executing preload script 
+Preload script is executed. 
+Executing script  Vocab 
+Executing script  Sound 
+Executing script  Cache 
+Executing script  DataManager 
+Executing script  SceneManager 
+Executing script  BattleManager 
+Executing script  Game_Temp 
+Executing script  Game_System 
+Executing script  Game_Timer 
+Executing script  Game_Message 
+Executing script  Game_Switches 
+Executing script  Game_Variables 
+Executing script  Game_SelfSwitches 
+Executing script  Game_Screen 
+Executing script  Game_Picture 
+Executing script  Game_Pictures 
+Executing script  Game_BaseItem 
+Executing script  Game_Action 
+Executing script  Game_ActionResult 
+Executing script  Game_BattlerBase 
+Executing script  Game_Battler 
+Executing script  Game_Actor 
+Executing script  Game_Enemy 
+Executing script  Game_Actors 
+Executing script  Game_Unit 
+Executing script  Game_Party 
+Executing script  Game_Troop 
+Executing script  Game_Map 
+Executing script  Game_CommonEvent 
+Executing script  Game_CharacterBase 
+Applied patch:  eval(params[0])  to  eval(MKXP.apply_overrides(params[0])) 
+Executing script  Game_Character 
+Executing script  Game_Player 
+Executing script  Game_Follower 
+Executing script  Game_Followers 
+Executing script  Game_Vehicle 
+Executing script  Game_Event 
+Applied patch:  [regex]\beval\(script\)  to  eval(MKXP.apply_overrides(script)) 
+Applied patch:  result = eval(@params[1])  to  result = eval(MKXP.apply_overrides(@params[1])) 
+Applied patch:  value = eval(@params[4])  to  value = eval(MKXP.apply_overrides(@params[4])) 
+Executing script  Game_Interpreter 
+Executing script  Sprite_Base 
+Executing script  Sprite_Character 
+Executing script  Sprite_Battler 
+Executing script  Sprite_Picture 
+Executing script  Sprite_Timer 
+Executing script  Spriteset_Weather 
+Executing script  Spriteset_Map 
+Executing script  Spriteset_Battle 
+Executing script  Window_Base 
+Executing script  Window_Selectable 
+Executing script  Window_Command 
+Executing script  Window_HorzCommand 
+Executing script  Window_Help 
+Executing script  Window_Gold 
+Executing script  Window_MenuCommand 
+Executing script  Window_MenuStatus 
+Executing script  Window_MenuActor 
+Executing script  Window_ItemCategory 
+Executing script  Window_ItemList 
+Executing script  Window_SkillCommand 
+Executing script  Window_SkillStatus 
+Executing script  Window_SkillList 
+Executing script  Window_EquipStatus 
+Executing script  Window_EquipCommand 
+Executing script  Window_EquipSlot 
+Executing script  Window_EquipItem 
+Executing script  Window_Status 
+Executing script  Window_SaveFile 
+Executing script  Window_ShopCommand 
+Executing script  Window_ShopBuy 
+Executing script  Window_ShopSell 
+Executing script  Window_ShopNumber 
+Executing script  Window_ShopStatus 
+Executing script  Window_NameEdit 
+Executing script  Window_NameInput 
+Executing script  Window_ChoiceList 
+Executing script  Window_NumberInput 
+Executing script  Window_KeyItem 
+Executing script  Window_Message 
+Executing script  Window_ScrollText 
+Executing script  Window_MapName 
+Executing script  Window_BattleLog 
+Executing script  Window_PartyCommand 
+Executing script  Window_ActorCommand 
+Executing script  Window_BattleStatus 
+Executing script  Window_BattleActor 
+Executing script  Window_BattleEnemy 
+Executing script  Window_BattleSkill 
+Executing script  Window_BattleItem 
+Executing script  Window_TitleCommand 
+Executing script  Window_GameEnd 
+Executing script  Window_DebugLeft 
+Executing script  Window_DebugRight 
+Executing script  Scene_Base 
+Executing script  Scene_Title 
+Executing script  Scene_Map 
+Executing script  Scene_MenuBase 
+Executing script  Scene_Menu 
+Executing script  Scene_ItemBase 
+Executing script  Scene_Item 
+Executing script  Scene_Skill 
+Executing script  Scene_Equip 
+Executing script  Scene_Status 
+Executing script  Scene_File 
+Executing script  Scene_Save 
+Executing script  Scene_Load 
+Executing script  Scene_End 
+Executing script  Scene_Shop 
+Executing script  Scene_Name 
+Executing script  Scene_Debug 
+Executing script  Scene_Battle 
+Executing script  Scene_Gameover 
+Executing script  入手インフォ 
+Executing script  セルフスイッチ操作 
+Executing script  メニュー変数 
+Executing script  特殊軽量化 
+Executing script  A1共通スクリプト 
+Executing script  装備拡張 
+Executing script  アクター窓 
+Executing script  画面外自律移動 
+Executing script  ステータス限界突破 
+Executing script  タイマー非表示 
+Executing script  ８方向移動 
+Executing script  アイテム合成 
+Executing script  バトルスピード調整 
+Executing script  61 ※ＡＴＢ　メイン設定 
+Executing script  71 Scene_Battle 
+Executing script  62 ステート　ターンフレーム 
+Executing script  62 Game_Battler 
+Executing script  71 Game_Battler フレーム更新 
+Executing script  71 Game_Battler 詠唱 
+Executing script  71 ※ＡＰ増減ステート　設定 
+Executing script  64 ※ＡＴＢ　ウインドウ設定 
+Executing script  50 ※ゲージ色設定　新 
+Executing script  戦闘コマンドカスタム1.05 
+Executing script  70 ステータスウインドウ 
+Executing script  61 敵ＡＰゲージ描画 
+Executing script  敵のHP表示 
+Executing script  根性食いしばり 
+Executing script  敵の行動賢く 
+Executing script  戦闘背景変更 
+Executing script  EX WINDOW 
+Requested resolution  640 x 480 
+Executing script  顔グラ戦闘 
+Executing script  VXAce_SP1 
+Executing script  逃走確率 
+Executing script  遠景床 
+Executing script  歩数リセット 
+Executing script  名前入力 
+Executing script  シンボル 
+Executing script  自動蘇生 
+Executing script  HP回復反転 
+Executing script  リージョン通行 
+Executing script  戦闘終了時戦闘不能解除 
+Executing script  誤選択防止 
+Executing script  hulogu 
+Executing script  バトラー表示拡張 
+Executing script  バトルミスト 
+Executing script  クリティカル効果音 
+Executing script  使用者効果 
+Executing script  ネームウィンドウ 
+Executing script  全体攻撃武器 
+Executing script  マップ名ウィンドウ 
+Executing script  足音 
+Executing script  レベル限界突破 
+Executing script  バトルシェイク 
+Executing script  周回敵の強さ 
+Executing script  メッセージスキップ 
+Executing postload scripts 
+Postload script is executed. 
+Cheats are enabled. 
+Cheats are enabled 
+Executing Cheat Script 
+Cheat script is executed. 
+Disabling Autotile Animations 
+Executing script  Main 
+SDL_APP_WILLENTERBACKGROUND 
+SDL_APP_DIDENTERBACKGROUND 
