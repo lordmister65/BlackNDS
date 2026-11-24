@@ -34,3 +34,7 @@ O workflow `.github/workflows/build-nds.yml` compila `nds-port/Makefile` com **d
 5. Resolver a inicialização no flashcart em hardware real.
 
 **Importante:** o código RGSS3 do VX Ace e o executável do Windows não rodam diretamente no Nintendo DS. É necessária a reimplementação da engine e conversão dos recursos, respeitando os direitos sobre a obra e seus assets.
+
+### Baixar uma nova compilação
+
+No GitHub, abra **Actions → Compilar BlackNDS e diagnostico R4**. Escolha a execução mais recente que esteja marcada como **success**. Na seção **Artifacts**, baixe **BlackNDS-Prototipo-DS** para obter `blacknds-prototype.nds`; o pacote **BlackNDS-R4-Check-0.3** contém apenas a ROM de diagnóstico. Extraia o ZIP antes de abrir a ROM no melonDS ou copiá-la para o microSD. Para compilar novamente sem alterações de código, use **Run workflow** na aba Actions.
