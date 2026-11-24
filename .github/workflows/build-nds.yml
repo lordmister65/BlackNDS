@@ -28,11 +28,14 @@ jobs:
         run: make -j2
       - name: Compilar ROM de diagnostico R4
         run: make -C diagnostic -j2
-      - name: Validar ambas as ROMs
+      - name: Compilar Hello World DS de referencia
+        run: make -C hello-world-ds -j2
+      - name: Validar as tres ROMs
         run: |
           test -s blacknds-prototype.nds
           test -s diagnostic/blacknds-r4-check.nds
-          ls -lh blacknds-prototype.nds diagnostic/blacknds-r4-check.nds
+          test -s hello-world-ds/hello-world-ds.nds
+          ls -lh blacknds-prototype.nds diagnostic/blacknds-r4-check.nds hello-world-ds/hello-world-ds.nds
       - name: Publicar ROM de diagnostico
         uses: actions/upload-artifact@v4
         with:
@@ -44,4 +47,11 @@ jobs:
         with:
           name: BlackNDS-Prototipo-DS
           path: nds-port/blacknds-prototype.nds
+          if-no-files-found: error
+
+      - name: Publicar Hello World DS para testar R4
+        uses: actions/upload-artifact@v4
+        with:
+          name: Hello-World-DS-Teste-R4
+          path: nds-port/hello-world-ds/hello-world-ds.nds
           if-no-files-found: error
