@@ -1,31 +1,36 @@
-# BlackNDS — protótipo técnico 01
+# BlackNDS — protótipo nativo 0.4 (Nintendo DS)
 
-Projeto experimental de adaptação do BLACK SOULS (RPG Maker VX Ace / RGSS3) para Nintendo DS original.
+Port experimental de **BLACK SOULS** (original RPG Maker VX Ace / RGSS3) para Nintendo DS. **Ainda não contém mapas, personagens nem recursos extraídos do BLACK SOULS.** O mapa atual é inteiramente demonstrativo e foi criado apenas para construir a engine de DS.
 
-**Status:** código-fonte inicial, ainda sem build ou teste confirmados. Não é um port funcional do jogo.
+## Implementado na versão 0.4
 
-## Conteúdo
-- `source/main.c`: mapa demonstrativo de caracteres, movimentação pelo direcional, limites e colisão com paredes.
-- `Makefile`: compilação nativa para DS usando devkitPro/devkitARM/libnds.
-- Os arquivos originais (`Data/`, `Audio/`, `Game.exe`) continuam intactos. O mapa demonstrativo **não** foi extraído do BLACK SOULS.
+- Tela superior: mapa colorido desenhado em bitmap 16-bit, blocos 16x16, câmera que acompanha o personagem e colisão.
+- Tela inferior: painel de informações, vida, ouro, poções e instruções.
+- Exploração de um mapa de demonstração de 32x24 células; NPC interativo, baú de recompensa, fonte de cura e encontro.
+- Menu de inventário e poções.
+- Combate simples de turnos, com ataque, poções, fuga e recompensa.
 
-## Compilar
-Instale o toolchain oficial devkitPro para Nintendo DS (`nds-dev`), com `DEVKITPRO` e `DEVKITARM` configurados. Em um terminal compatível com GNU Make:
+### Controles
 
-```sh
-cd nds-port
-make
-```
+- **Direcional:** mover
+- **A:** interagir; atacar no combate; usar poção no inventário
+- **B:** voltar / fugir
+- **START:** inventário
+- **SELECT:** combate de demonstração
+- **X:** poção durante combate
 
-Saída esperada: `blacknds-prototype.nds`. Se houver falhas, confira a instalação do devkitPro e a versão de libnds.
+### Compilação
 
-## Testar
-Abra `blacknds-prototype.nds` em um emulador Nintendo DS compatível. Use o direcional para mover `@` e START para voltar à posição inicial. Só depois de validar o funcionamento considere copiar o arquivo para o cartão R4, preservando seu backup.
+O workflow `.github/workflows/build-nds.yml` compila `nds-port/Makefile` com **devkitARM/libnds** e publica `blacknds-prototype.nds`. Ele também publica `blacknds-r4-check.nds`, ROM separada de diagnóstico de inicialização.
 
-## Próximas fases
-1. Confirmar compilação e execução no emulador/DS.
-2. Exportar um mapa real de `Data/MapXXX.rvdata2` com ferramentas apropriadas ao RPG Maker VX Ace e verificar licenças de assets.
-3. Criar renderização 2D com tiles e sprites nas telas do DS.
-4. Migrar eventos, diálogos, sistemas e salvamento gradualmente.
+**R4 Gold Pro SDHC 2026 (r4isdhc.com):** o console físico relatou travamento em `Loading` tanto no protótipo anterior quanto na ROM mínima de diagnóstico. Assim, a execução do build 0.4 no R4 **não está confirmada**. Teste primeiro no emulador melonDS. Não formate o microSD nem substitua o kernel do R4 sem backup.
 
-**Aviso:** scripts RGSS3 e executável Win32 não funcionam diretamente no Nintendo DS.
+### Próximas etapas reais do port
+
+1. Converter dados de mapas RPG Maker VX Ace `Data/Map*.rvdata2` em formato que a engine do DS possa ler, preservando seus layouts originais.
+2. Implementar sistema de tilesets/sprites adaptados à memória do hardware.
+3. Migrar diálogos, eventos e progressão do jogo, ajustando o que o DS original consegue executar.
+4. Implementar áudio e salvamento.
+5. Resolver a inicialização no flashcart em hardware real.
+
+**Importante:** o código RGSS3 do VX Ace e o executável do Windows não rodam diretamente no Nintendo DS. É necessária a reimplementação da engine e conversão dos recursos, respeitando os direitos sobre a obra e seus assets.
