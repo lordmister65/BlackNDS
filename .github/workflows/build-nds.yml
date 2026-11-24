@@ -1,0 +1,38 @@
+name: Compilar prototipo Nintendo DS
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'nds-port/**'
+      - '.github/workflows/build-nds.yml'
+  workflow_dispatch:
+
+jobs:
+  build-nds:
+    runs-on: ubuntu-latest
+    container:
+      image: devkitpro/devkitarm:latest
+    defaults:
+      run:
+        working-directory: nds-port
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Verificar ferramentas
+        run: |
+          echo "DEVKITPRO=$DEVKITPRO DEVKITARM=$DEVKITARM"
+          test -f "$DEVKITARM/ds_rules"
+          test -d "$DEVKITPRO/libnds"
+      - name: Compilar
+        run: make -j2
+      - name: Verificar ROM
+        run: |
+          test -s blacknds-prototype.nds
+          ls -lh blacknds-prototype.nds
+      - name: Disponibilizar download
+        uses: actions/upload-artifact@v4
+        with:
+          name: BlackNDS-Prototipo-DS
+          path: nds-port/blacknds-prototype.nds
+          if-no-files-found: error
