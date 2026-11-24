@@ -1,4 +1,4 @@
-name: Compilar prototipo Nintendo DS
+name: Compilar BlackNDS e diagnostico R4
 
 on:
   push:
@@ -19,18 +19,27 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Verificar ferramentas
+      - name: Verificar ambiente
         run: |
           echo "DEVKITPRO=$DEVKITPRO DEVKITARM=$DEVKITARM"
           test -f "$DEVKITARM/ds_rules"
           test -d "$DEVKITPRO/libnds"
-      - name: Compilar
+      - name: Compilar prototipo de jogo
         run: make -j2
-      - name: Verificar ROM
+      - name: Compilar ROM de diagnostico R4
+        run: make -C diagnostic -j2
+      - name: Validar ambas as ROMs
         run: |
           test -s blacknds-prototype.nds
-          ls -lh blacknds-prototype.nds
-      - name: Disponibilizar download
+          test -s diagnostic/blacknds-r4-check.nds
+          ls -lh blacknds-prototype.nds diagnostic/blacknds-r4-check.nds
+      - name: Publicar ROM de diagnostico
+        uses: actions/upload-artifact@v4
+        with:
+          name: BlackNDS-R4-Check-0.3
+          path: nds-port/diagnostic/blacknds-r4-check.nds
+          if-no-files-found: error
+      - name: Publicar prototipo jogavel
         uses: actions/upload-artifact@v4
         with:
           name: BlackNDS-Prototipo-DS
